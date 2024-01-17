@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TItle of The Page</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        #particles-js {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("bg.jpg");
+            background-size: cover;
+            position: relative;
+        }
+
+        .background-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            background-color: transparent;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: none;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .dropdown-container {
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 50%;
+            transform: translateX(-50%, -50%);
+            display: none;
+            background-color: transparent;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #clubsButton:hover+#dropdownContainer,
+        .dropdown-container:hover {
+            display: block;
+        }
+
+        #clubsButton:hover+#dropdownContainer {
+            right: calc(10% + 10px);
+        }
+
+        #clubsButton:hover~.background-button {
+            transform: translate(-50%, -50%) translateY(30px);
+        }
+
+        #clubsButton:hover~.background-button button {
+            display: block;
+            padding: 10px 20px;
+            background-color: transparent;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 5px;
+            width: 100%;
+            text-align: left;
+            white-space: normal;
+        }
+
+
+        h1 {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            color: whitesmoke;
+        }
+
+        .button-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: transparent;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .dropdown-container {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+            background-color: transparent;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #clubsButton:hover+#dropdownContainer,
+        #dropdownContainer:hover {
+            display: block;
+
+        }
+
+        #clubsButton:hover+#dropdownContainer,
+        #dropdownContainer:hover {
+            display: block;
+        }
+
+        nav h2 {
+            margin: 15px;
+            padding: 24px;
+            font-size: xx-large;
+            text-align: center;
+            font-weight: 100;
+        }
+
+        nav p {
+            margin-left: 15vw;
+            margin-right: 15vw;
+            margin-top: 0px;
+            margin-bottom: 15vh;
+            text-align: center;
+            font-weight: 1;
+        }
+
+        footer nav {
+            font-size: x-small;
+            font-weight: lighter;
+            background-color: rgba(54, 53, 53, 0.452);
+            color: rgb(121, 65, 65);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <h1>NAME OF THE WEBSITE</h1>
+
+    <div class="button-container">
+        <button id="homeButton" class="button">Home</button>
+        <button id="resourcesButton" class="button">Resources</button>
+        <button id="documentationButton" class="button">Documentation</button>
+        <button id="galleryButton" class="button">Gallery</button>
+        <button id="alumniButton" class="button">Alumni</button>
+        <button id="clubsButton" class="button">Clubs & 4i</button>
+        <div class="dropdown-container" id="dropdownContainer">
+            <button id="4i" class="button">4i Lab</button>
+            <button id="Acumen" class="button">Acumen: Quiz Club</button>
+            <button id="Aeromodelling_Club" class="button">Aeromodelling Club</button>
+            <button id="Automobile_club" class="button">Automobile Club</button>
+            <button id="Coding_club" class="button">Coding Club</button>
+            <button id="Cna" class="button">Consulting and Analytics Club</button>
+            <button id="Electronics_club" class="button">Electronics Club</button>
+            <button id="EDC" class="button">Entrepreneur Development Cell</button>
+            <button id="Equinox" class="button">Equinox: Astronomy club</button>
+            <button id="FEC" class="button">Finance and Economics Club</button>
+            <button id="Prakriti" class="button">Prakriti Club</button>
+            <button id="RoboticsClub" class="button">Robotics Club</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!--particles.js script -->
+    <script>
+        particlesJS("particles-js", {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#ffffff"
+                },
+                shape: {
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    },
+                    image: {
+                        src: "img/github.svg",
+                        width: 100,
+                        height: 100
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: false,
+                    anim: {
+                        enable: false,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#ffffff",
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "grab" // Change the mode to "grab" to make particles follow the cursor
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 200, // Adjust the distance of grabbing particles
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 40,
+                        duration: 2,
+                        opacity: 8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+    <script>
+        // Function to handle button clicks
+        function handleButtonClick(buttonId) {
+            if (buttonId === "homeButton") {
+                // Redirect to the home page
+                window.location.href = "https://www.iitg.ac.in/stud/gymkhana/technical/index.html";
+            } else if (buttonId === "resourcesButton") {
+                // Redirect to the resources page
+                window.location.href = "https://www.iitg.ac.in/stud/gymkhana/technical/resources/RoboticsResources.html";
+            } else if (buttonId === "documentationButton") {
+                // Redirect to the documentation page
+                window.location.href = "https://www.iitg.ac.in/stud/gymkhana/technical/documentation/RoboticsDocumentation.html";
+            } else if (buttonId === "galleryButton") {
+                // Redirect to the gallery page
+                window.location.href = "https://www.iitg.ac.in/stud/gymkhana/technical/gallery/RoboticsGallery.html";
+            } else if (buttonId === "alumniButton") {
+                // Redirect to the alumni page
+                window.location.href = "https://www.iitg.ac.in/stud/gymkhana/technical/alumni/RoboticsAlumni.html";
+            } else if (buttonId === "clubsButton") {
+                // Redirect to the clubs page
+                if (buttonId === "4i") {
+                    window.location.href = "https://www.iitg.ac.in/stud/gymkhana/technical/home/4iHome.html"
+                }
+                else if (buttonId === "Acumen") {
+                    window.location.href = "https://www.iitg.ac.in/stud/gymkhana/technical/home/AcumenHome.html"
+                }
+                else if (buttonId === "Aeromodelling_Club") {
+                    window.location.href = "https://www.iitg.ac.in/stud/gymkhana/technical/home/AeroHome.html"
+                }
+                else if (buttonId === "Automobile_club") {
+                    window.location.href = "https://www.iitg.ac.in/stud/gymkhana/technical/home/AutoHome.html"
+                }
+                else if (buttonId === "Coding_club") {
+                    window.location.href = "https://www.iitg.ac.in/stud/gymkhana/technical/home/CodingHome.html"
+                }
+                else if (buttonId === "Cna") {
+                    window.location.href = "https://www.iitg.ac.in/stud/gymkhana/technical/home/CnAHome.html"
+                }
+                else if (buttonId === "Electronics_club") {
+                    window.location.href = "https://www.iitg.ac.in/stud/gymkhana/technical/home/ElectronicsHome.html"
+                }
+                else if (buttonId === "EDC") {
+                    window.location.href = "https://www.iitg.ac.in/stud/gymkhana/technical/home/EDCHome.html"
+                }
+                else if (buttonId === "Equinox") {
+                    window.location.href = "https://www.iitg.ac.in/stud/gymkhana/technical/home/EquinoxHome.html"
+                }
+                else if (buttonId === "FEC") {
+                    window.location.href = "https://www.iitg.ac.in/stud/gymkhana/technical/home/FnEHome.html"
+                }
+                else if (buttonId === "Prakriti") {
+                    window.location.href = "https://www.iitg.ac.in/stud/gymkhana/technical/home/PrakritiHome.html"
+                }
+                else if (buttonId === "RoboticsClub") {
+                    window.location.href = "https://www.iitg.ac.in/stud/gymkhana/technical/home/RoboticsHome.html"
+                }
+
+            }
+            // Add conditions for the remaining buttons
+        }
+
+        // Add event listeners to the buttons
+        document.getElementById("homeButton").addEventListener("click", function () {
+            handleButtonClick("homeButton");
+        });
+        document.getElementById("resourcesButton").addEventListener("click", function () {
+            handleButtonClick("resourcesButton");
+        });
+        document.getElementById("documentationButton").addEventListener("click", function () {
+            handleButtonClick("documentationButton");
+        });
+        document.getElementById("galleryButton").addEventListener("click", function () {
+            handleButtonClick("galleryButton");
+        });
+        document.getElementById("alumniButton").addEventListener("click", function () {
+            handleButtonClick("alumniButton");
+        });
+        document.getElementById("clubsButton").addEventListener("click", function () {
+            handleButtonClick("clubsButton");
+        });
+        // Add event listeners for the remaining buttons
+    </script>
+    <script>
+        // Smooth scroll function
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <nav>
+        <h2>About Us</h2>
+        <p>
+            The mission of IIT Guwahati's Robotics Club is to unite students in an educational environment and provide
+            students a place to pursue their interest in mechanical, electronic, and software design by working on large
+            and small scale robotics projects. Having said that we take pride in talking about our projects, be it
+            autonomous bots, humanoids, swarm of tiny robots, robotic arms or aerial vehicles, we haven't left any stone
+            unturned. However, the club provides much more than just technical growth to its members, from team-building
+            to cooperation, from perseverance to sincerity, the club teaches you a myriad of interpersonal skills
+            essential in daily life. The club is open to students with or without experience because, believe it or not,
+            none of us had any idea of robotics when we first stepped into the club room, neither do we expect anything
+            from you. You just need to show up and the club and its people will take care of the rest. The club's
+            environment perpetuates the sharing of wisdom and experience amongst our members. We cater to every
+            individual who ever wanted to design their own circuit and control their own bot. All we need from you is
+            enthusiasm!
+        </p>
+    </nav>
+    <footer>
+        <nav>
+            copyright &copy; @Manish | All rights reseved
+        </nav>
+    </footer>
+</body>
+
+</html>
